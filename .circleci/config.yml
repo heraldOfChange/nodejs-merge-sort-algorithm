@@ -2,12 +2,11 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:4.8.2
+      - image: circleci/node
     steps:
       - checkout
       - run:
-          name: install node modules
-          command: npm install
-      - run:
-          name: running tests
-          command: npm run test
+          name: run tests
+          command: |
+            npm install
+            npm test
